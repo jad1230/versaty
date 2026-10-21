@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Versaty — Parfumerie française</title>
+<meta name="description" content="Versaty, parfumerie française. Les collections Spada, Woodmania et Oh yes, et la création de votre propre marque de parfum, de la formule à la logistique.">
+<meta name="theme-color" content="#ece7de">
+<meta property="og:title" content="Versaty — Parfumerie française">
+<meta property="og:description" content="Chaque parfum est une histoire, chaque note un frisson.">
+<meta property="og:image" content="assets/og.jpg">
+<link rel="icon" type="image/png" href="assets/logo-dark.png">
+<!--FONTS--><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Host+Grotesk:wght@300..600&family=Geist+Mono:wght@400;500&display=swap"><!--/FONTS-->
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-view="home">
+<!--BODY-->
+<header class="nav" id="nav">
+  <a class="brand" href="#/" data-route="home" aria-label="Versaty"><img src="assets/logo-dark.png" alt="" width="12" height="18"><span>VERSATY</span></a>
+  <nav class="links" aria-label="Navigation">
+    <a href="#/collection" data-route="collection" data-i18n="navCollection">La collection</a>
+    <a href="#/full-service" data-route="service" data-i18n="navService">Full service</a>
+    <a href="#/full-service/inquiry" data-route="inquiry" data-i18n="navContact">Contact</a>
+  </nav>
+  <div class="nav-actions">
+    <button class="lang" id="langBtn" type="button"><span id="langCur">FR</span><i>/</i><span id="langAlt">EN</span></button>
+    <a class="nav-cta" href="#/full-service/inquiry" data-route="inquiry" data-i18n="navInquiry">Demande de projet</a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu" hidden>
+  <a href="#/" data-route="home" data-i18n="navHome">Accueil</a>
+  <a href="#/collection" data-route="collection" data-i18n="navCollection">La collection</a>
+  <a href="#/full-service" data-route="service" data-i18n="navService">Full service</a>
+  <a href="#/full-service/inquiry" data-route="inquiry" data-i18n="navInquiry">Demande de projet</a>
+</div>
+
+<main>
+  <!-- ============ HOME: the brand, told on scroll ============ -->
+  <section class="view" id="v-home" data-view="home">
+    <div class="intro" id="intro">
+      <div class="i-stage">
+        <canvas class="i-canvas" id="iCanvas" aria-hidden="true"></canvas>
+        <div class="i-veil"></div>
+
+        <div class="i-scene s-mark">
+          <p class="label" data-c="iLabel"></p>
+          <h1 class="i-word" aria-label="Versaty"><span>V</span><span>e</span><span>r</span><span>s</span><span>a</span><span>t</span><span>y</span></h1>
+          <p class="i-tag" data-c="iTag"></p>
+          <div class="cue"><span data-c="iScroll"></span><i></i></div>
+        </div>
+
+        <div class="i-scene s-quote"><p class="i-quote" id="iQuote"></p></div>
+
+        <div class="i-scene s-art">
+          <div class="art-copy"><h2 data-c="iArtTitle"></h2><p class="lead" data-c="iArtLead"></p></div>
+        </div>
+
+        <div class="i-scene s-born"><p class="label born-label">Spada — Madeleine</p></div>
+
+        <div class="i-scene s-col">
+          <div class="col-head"><h2 data-c="iColTitle"></h2><p class="lead" data-c="iColLead"></p></div>
+          <ul class="sigs" id="sigs"></ul>
+        </div>
+
+        <div class="i-scene s-uni">
+          <h2 data-c="iUniTitle"></h2>
+          <ul class="uni-words" id="uniWords"></ul>
+          <p class="lead" data-c="iUniLead"></p>
+        </div>
+
+        <div class="i-scene s-trust">
+          <p class="label" data-c="iTrust"></p>
+          <ul class="trust-names" id="trustNames"></ul>
+        </div>
+
+        <div class="i-scene s-choice">
+          <h2 data-c="choiceTitle"></h2>
+          <div class="doors">
+            <a class="door door-srv" href="#/full-service" data-route="service" data-door="service">
+              <span class="label" data-c="doorSrvLabel"></span><strong data-c="doorSrvTitle"></strong><span class="door-cta"><span data-c="doorSrvCta"></span><i></i></span>
+            </a>
+            <a class="door door-col" href="#/collection" data-route="collection" data-door="collection">
+              <span class="label" data-c="doorColLabel"></span><strong data-c="doorColTitle"></strong><span class="door-cta"><span data-c="doorColCta"></span><i></i></span>
+            </a>
+          </div>
+        </div>
+
+        <button class="i-skip" id="iSkip" type="button">Passer</button>
+        <div class="i-progress" aria-hidden="true"><i id="iBar"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COLLECTION: the six pillars, then all eighteen ============ -->
+  <section class="view" id="v-collection" data-view="collection" hidden>
+    <div class="journey" id="journey">
+      <div class="j-stage" id="jStage">
+        <div class="j-worlds" id="jWorlds"></div>
+        <canvas class="j-canvas" id="jCanvas" aria-hidden="true"></canvas>
+        <div class="j-panels" id="jPanels"></div>
+        <p class="j-hint label" id="jHint"></p>
+        <nav class="g-index" id="gIndex" aria-label="Parfums"></nav>
+      </div>
+    </div>
+    <section class="collection" id="collection" data-tone="light">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="label" data-i18n="colEyebrow">La collection</p>
+          <h2 data-i18n="colTitle">Dix-huit créations, trois signatures.</h2>
+        </div>
+        <div class="filters" id="filters" role="group" aria-label="Filtres"></div>
+        <ul class="grid" id="grid"></ul>
+      </div>
+    </section>
+  </section>
+
+  <!-- ============ FULL SERVICE: the private-label pathway ============ -->
+  <section class="view" id="v-service" data-view="service" hidden>
+    <header class="fs-hero" data-tone="light">
+      <div class="wrap fs-hero-grid">
+        <div class="fs-copy">
+          <p class="label" data-c="fsLabel"></p>
+          <h1 data-c="fsTitle"></h1>
+          <p class="lead" data-c="fsLead"></p>
+          <a class="btn" href="#path" data-c="fsStart"></a>
+        </div>
+        <figure class="fs-visual"><img src="assets/detail/fs.webp" alt=""></figure>
+      </div>
+    </header>
+
+    <section class="path" id="path" data-tone="dark">
+      <div class="path-stage">
+        <div class="path-head wrap"><p class="label" data-c="pathLabel"></p><h2 data-c="pathTitle"></h2></div>
+        <div class="path-track" id="pathTrack"><svg class="path-line" id="pathLine" preserveAspectRatio="none" aria-hidden="true"><path id="pathD"/><path id="pathDone"/></svg><ol class="path-steps" id="pathSteps"></ol></div>
+      </div>
+    </section>
+
+    <section class="uni" data-tone="light">
+      <div class="wrap">
+        <div class="sec-head two"><p class="label" data-c="uniLabel"></p><h2 data-c="uniTitle"></h2></div>
+        <ul class="uni-list" id="uniList"></ul>
+      </div>
+    </section>
+
+    <section class="logi" data-tone="dark">
+      <div class="wrap logi-grid">
+        <div><p class="label" data-c="logLabel"></p><h2 data-c="logTitle"></h2><p class="lead" data-c="logLead"></p></div>
+        <ol class="logi-list" id="logList"></ol>
+      </div>
+    </section>
+
+    <section class="trust" data-tone="light">
+      <div class="wrap"><p class="label" data-c="trustTitle"></p><ul class="trust-row" id="trustRow"></ul></div>
+    </section>
+
+    <section class="contact" id="inquiry" data-tone="light">
+      <div class="wrap contact-grid">
+        <div class="contact-copy">
+          <p class="label" data-c="inqLabel"></p>
+          <h2 data-c="inqTitle"></h2>
+          <p class="lead" data-c="inqLead"></p>
+          <dl class="coords">
+            <div><dt>T</dt><dd><a href="tel:+33442940149">+33 4 42 94 01 49</a></dd></div>
+            <div><dt>E</dt><dd><a href="mailto:contact@versaty.fr">contact@versaty.fr</a></dd></div>
+          </dl>
+        </div>
+        <form class="form" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/">
+          <input type="hidden" name="form-name" value="contact">
+          <p class="hp"><label>Ne pas remplir <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+          <label for="f-name"><span data-i18n="fName">Nom</span><input id="f-name" name="name" required autocomplete="name"></label>
+          <label for="f-company"><span data-i18n="fCompany">Société</span><input id="f-company" name="company" autocomplete="organization"></label>
+          <label class="full" for="f-email"><span data-i18n="fEmail">E-mail</span><input id="f-email" name="email" type="email" required autocomplete="email"></label>
+          <label class="full" for="f-type"><span data-i18n="fType">Type de projet</span><select id="f-type" name="type"></select></label>
+          <label class="full" for="f-msg"><span data-i18n="fMsg">Votre projet</span><textarea id="f-msg" name="message" rows="4"></textarea></label>
+          <button class="btn full" type="submit"><span data-i18n="fSend">Envoyer</span></button>
+          <p class="form-status full" id="formStatus" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </section>
+</main>
+
+<footer class="foot" data-tone="dark">
+  <div class="wrap foot-grid">
+    <div class="foot-brand"><span class="word">Versaty</span><span class="label" data-i18n="footerTag"></span></div>
+    <nav class="foot-links" aria-label="Pied de page">
+      <a href="#/collection" data-route="collection" data-i18n="navCollection">La collection</a>
+      <a href="#/full-service" data-route="service" data-i18n="navService">Full service</a>
+      <a href="#/full-service/inquiry" data-route="inquiry" data-i18n="navInquiry">Demande de projet</a>
+    </nav>
+    <p class="label foot-legal">© 2026 Versaty · <span data-i18n="legal">Mentions légales</span></p>
+  </div>
+</footer>
+
+<div class="detail" id="detail" hidden role="dialog" aria-modal="true" aria-labelledby="dName">
+  <button class="detail-close" id="detailClose" type="button" data-i18n="close">Fermer</button>
+  <div class="detail-inner">
+    <div class="detail-visual"><div class="d-stage"><img id="detailImg" alt=""><span class="d-plinth"></span></div></div>
+    <div class="detail-copy">
+      <p class="label" id="dRange"></p>
+      <h2 id="dName"></h2>
+      <p class="d-fam" id="dFam"></p>
+      <p class="d-line" id="dLine"></p>
+      <p class="label d-pyr" data-i18n="pyramid">Pyramide olfactive</p>
+      <div class="notes-table" id="dNotes"></div>
+      <div class="d-actions">
+        <a class="btn" href="#/full-service/inquiry" id="dCta" data-i18n="createLike"></a>
+        <a class="btn ghost" href="#/collection" id="dView" data-i18n="view3d" hidden></a>
+      </div>
+      <div class="d-nav">
+        <button type="button" id="dPrev"><span data-i18n="prev">Précédent</span></button>
+        <span id="dCount"></span>
+        <button type="button" id="dNext"><span data-i18n="next">Suivant</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="route-veil" id="routeVeil" aria-hidden="true"></div>
+<!--/BODY-->
+<!--APP--><script type="module" src="js/app.js"></script><!--/APP-->
+</body>
+</html>
